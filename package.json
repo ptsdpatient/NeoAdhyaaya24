@@ -4,6 +4,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"build:css": "tailwindcss build src/app.css -o public/build/app.css",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -19,17 +20,24 @@
 		"@sveltejs/adapter-vercel": "^3.1.0",
 		"@sveltejs/kit": "^1.30.3",
 		"@types/cookie": "^0.5.4",
+		"autoprefixer": "^10.4.17",
 		"eslint": "^8.55.0",
 		"eslint-config-prettier": "^8.10.0",
 		"eslint-plugin-svelte": "^2.35.1",
+		"postcss": "^8.4.34",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"svelte": "^3.59.2",
 		"svelte-check": "^3.6.2",
+		"tailwindcss": "^3.4.1",
 		"typescript": "^5.3.3",
 		"vite": "^4.5.1",
 		"vitest": "^0.25.8",
 		"web-vitals": "^3.5.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@splidejs/svelte-splide": "^0.2.9",
+		"svelte-modals": "^1.3.0"
+	}
 }
