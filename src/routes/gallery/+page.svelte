@@ -1,6 +1,12 @@
 <script>
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css';
+    let dropdown=false;
+    function toggle(){
+        dropdown=!dropdown
+    }
+    import adhyaayaLogo from '$lib/images/adhyaaya-logo.png' 
+    import dropdownIcon from '$lib/images/dropdown.png'
 let options = {
 	type: 'loop',
 	autoplay: true,
@@ -14,7 +20,25 @@ let options = {
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
 <!-- zoomwall.js -->
-
+<div class="header fixed">
+    <a href="/">
+        <img class="adhyaayaLogo" src={adhyaayaLogo} alt="Adhyaaya Logo">
+    </a>
+    <a on:click={toggle} on:keydown={toggle} class="select" href="/">
+        <img class="dropdownIcon"  src={(dropdown)?dropdownIcon:dropdownIcon} alt="Adhyaaya Logo">
+        {#if dropdown}
+        <div class="dropdown">
+            <a class="dropdown_item" href="/">home</a>
+            <a class="dropdown_item" href="/events">events</a>
+            <a class="dropdown_item" href="/about">about us</a>
+            <a class="dropdown_item" href="/contacts">contact</a>
+            <a class="dropdown_item" href="/gallery">gallery</a>
+            <a class="dropdown_item" href="/sponsors">sponsors</a>
+            <a class="dropdown_item" href="/teams">teams</a>
+        </div>
+        {/if}
+    </a>
+</div>
 <div class="fixed h-full w-full bg-black"></div>
 <div
 	class="events-container w-1/2 mx-auto bg-black grid grid-cols-1 justify-items-stretch scroll-smooth pb-16"
@@ -29,7 +53,7 @@ let options = {
 	<Splide {options} aria-label="2022" id="2022">
 		{#each Array.from({length: 5}) as _, i}
 			<SplideSlide>
-			<img src="/gallery/2022/{i}-min.jpg" alt="" class="mx-auto max-h-[50vh]" />
+			<img src="/gallery/2022/{i}-min.jpg" alt="" class="mx-auto" />
 		  </SplideSlide>
 		{/each}
 	  </Splide>

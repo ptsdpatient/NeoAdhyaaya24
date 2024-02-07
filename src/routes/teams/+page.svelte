@@ -1,4 +1,9 @@
 <script lang="ts">
+    
+    import adhyaayaLogo from '$lib/images/adhyaaya-logo.png' 
+    import dropdownIcon from '$lib/images/dropdown.png'
+	import background from '$lib/images/bg-2.jpg'
+
 	import swarali_prayagi_photo from '$lib/assets/team/advisors/swarali-prayagi-compressed.webp?url';
 	import shlok_tajne_photo from '$lib/assets/team/advisors/shlok-tajne-compressed.webp?url';
 	import aditya_tete_photo from '$lib/assets/team/advisors/aditya-tete-compressed.webp?url';
@@ -48,6 +53,10 @@
 	import tejesh_ghuge_photo from '$lib/assets/team/publicity/tejesh-ghuge.webp?url';
 	import anushree_barad_photo from '$lib/assets/team/publicity/anushree-barad.webp?url';
 	import sushrut_kohale_photo from '$lib/assets/team/coordinators/sushrut.jpeg?url';
+    let dropdown=false;
+    function toggle(){
+        dropdown=!dropdown
+    }
 	</script>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -56,6 +65,28 @@
 <svelte:head>
 	<title>Meet Our Team | Adhyaaya'24</title>
 </svelte:head>
+
+<img class="fixed w-full t-0" style="z-index:-1" src={background} alt="background" width=100% height=100% >
+
+<div class="header h-[10vh] fixed">
+    <a href="/">
+        <img class="adhyaayaLogo" src={adhyaayaLogo} alt="Adhyaaya Logo">
+    </a>
+    <a on:click={toggle} on:keydown={toggle} class="select " href="#">
+        <img class="dropdownIcon text-black p-1" src={dropdownIcon} alt="Adhyaaya Logo">
+        {#if dropdown}
+        <div class="dropdown">
+            <a class="dropdown_item" href="/">home</a>
+            <a class="dropdown_item" href="/events">events</a>
+            <a class="dropdown_item" href="/about">about us</a>
+            <a class="dropdown_item" href="/contacts">contact</a>
+            <a class="dropdown_item" href="/gallery">gallery</a>
+            <a class="dropdown_item" href="/sponsors">sponsors</a>
+            <a class="dropdown_item" href="/teams">teams</a>
+        </div>
+        {/if}
+    </a>
+</div>
 
 <!-- <Nav /> -->
 <div class="h-full w-full">
@@ -1501,47 +1532,7 @@
 			</div>
 		</div>
 	</article>
-	<article class="my-cont">
-		<div style:--img={`url(${mrunmai_ingole_photo})`} class="thumb" />
-		<div class="infos">
-			<h2 class="title">Mrunmai Ingole<span class="flag" /></h2>
-			<h3 class="date">Head</h3>
-			<h3 class="seats"><!--status--></h3>
-			<p class="txt"><!-- data--></p>
-			<div class="details">
-				<a
-					rel="external noopener noreferrer nofollow"
-					target="_blank"
-					href="mailto:chetnasalve00@gmail.com"
-				>
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#EA4335] bg-clip-text"
-						icon="mdi:email-outline"
-					/>
-				</a>
-				<a
-					rel="external noopener noreferrer nofollow"
-					target="_blank"
-					href="https://instagram.com/chetna__salve"
-				>
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#FF1C7C] bg-clip-text"
-						icon="mdi:instagram"
-					/>
-				</a>
-				<a
-					rel="external noopener noreferrer nofollow"
-					target="_blank"
-					href="https://www.linkedin.com/in/chetna-salve-2951a8249"
-				>
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#006192] bg-clip-text"
-						icon="mdi:linkedin"
-					/>
-				</a>
-			</div>
-		</div>
-	</article>
+	
 	<article class="my-cont">
 		<div style:--img={`url(${shweta_mane_photo})`} class="thumb" />
 		<div class="infos">
@@ -1641,8 +1632,6 @@
 			</div>
 		</div>
 	</article>
-</div>
-<div class="my-cont_flex">
 	<article class="my-cont">
 		<div style:--img={`url(${hardik_bodele_photo})`} class="thumb" />
 		<div class="infos">
@@ -1685,35 +1674,6 @@
 		</div>
 	</article>
 	<article class="my-cont">
-		<div style:--img={`url(${sneha_motghare_photo})`} class="thumb" />
-		<div class="infos">
-			<h2 class="title">Sneha Motghare<span class="flag" /></h2>
-			<h3 class="date">Co Head</h3>
-			<h3 class="seats"><!--status--></h3>
-			<p class="txt"><!-- data--></p>
-			<div class="details">
-				<a rel="external noopener noreferrer nofollow" target="_blank" href="">
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#EA4335] bg-clip-text"
-						icon="mdi:email-outline"
-					/>
-				</a>
-				<a rel="external noopener noreferrer nofollow" target="_blank" href="">
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#FF1C7C] bg-clip-text"
-						icon="mdi:instagram"
-					/>
-				</a>
-				<a rel="external noopener noreferrer nofollow" target="_blank" href="">
-					<iconify-icon
-						class="text-3xl lg:text-5xl text-[#006192] bg-clip-text"
-						icon="mdi:linkedin"
-					/>
-				</a>
-			</div>
-		</div>
-	</article>
-	<article class="my-cont">
 		<div style:--img={`url(${samruddhe_nasre_photo})`} class="thumb" />
 		<div class="infos">
 			<h2 class="title">Samruddhi Nasre<span class="flag" /></h2>
@@ -1744,6 +1704,8 @@
 	</article>
 </div>
 </div>
+
+
 <style>
 
 
@@ -1911,4 +1873,44 @@
 			margin-bottom: 1rem;
 		}
 	}
+    .header{
+        width:100%;
+        position:fixed;
+        display:flex;
+        
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .adhyaayaLogo{
+        width:10rem;
+        margin:auto;
+        padding:0.4rem;
+        padding-left: 1rem;;
+    }
+    
+    .dropdownIcon{
+        width:3rem;
+        margin:auto;
+        position:absolute;
+        top:1rem;
+        right:1rem;
+        user-select:text
+    }
+	.dropdown{
+    display:flex;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    flex-direction: column;
+    width:6rem;
+    gap:0.3rem;
+    height:auto;
+   }
+   .dropdown_item{
+    padding:0.5rem;
+    height:1.2rem;
+    text-align: center;
+    width:4rem;
+    background-color: antiquewhite;
+}
 </style>

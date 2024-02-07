@@ -91,7 +91,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('10 Mar 2023'),
 		end_date: new Date('11 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${respawn}`,
+		icon: `${respawn}`,
 		poster: p_respawn,
 		contact: [
 			{
@@ -128,7 +128,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('20,21 Feb 2024'),
 		end_date: new Date('20,21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${valorant}`,
+		icon: `${valorant}`,
 		poster: p_respawn,
 		contact: [
 			{
@@ -153,7 +153,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${BGMI}`,
+		icon: `${BGMI}`,
 		poster: p_respawn,
 		contact: [
 			{
@@ -178,7 +178,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('20 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${respawn}`,
+		icon: `${respawn}`,
 		poster: p_respawn,
 		contact: [
 			{
@@ -268,7 +268,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('20,21 Feb 2024'),
 		end_date: new Date('20,21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${virtual_placement_icon}`,
+		icon: `${virtual_placement_icon}`,
 		// icon: 'healthicons:group-discussion-meetingx3-negative',
 		poster: p_virtual_placement,
 		contact: [
@@ -327,7 +327,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('11 Mar 2023 11:00'),
 		end_date: new Date('11 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${inexpress}`,
+		icon: `${inexpress}`,
 		poster: p_bridge_o_craft,
 		contact: [
 			{
@@ -356,7 +356,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('11 Mar 2023 11:00'),
 		end_date: new Date('11 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${aeromodel}`,
+		icon: `${aeromodel}`,
 		poster: p_bridge_o_craft,
 		contact: [
 			{
@@ -385,7 +385,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('11 Mar 2023 11:00'),
 		end_date: new Date('11 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${sspy}`,
+		icon: `${sspy}`,
 		poster: p_bridge_o_craft,
 		contact: [
 			{
@@ -414,7 +414,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('11 Mar 2023 11:00'),
 		end_date: new Date('11 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${qmaster}`,
+		icon: `${qmaster}`,
 		poster: p_bridge_o_craft,
 		contact: [
 			{
@@ -443,7 +443,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${roborace}`,
+		icon: `${roborace}`,
 		poster: p_roborace,
 		contact: [
 			{
@@ -472,7 +472,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${vaad_vivad}`,
+		icon: `${vaad_vivad}`,
 		poster: p_vaadvivad,
 		contact: [
 			{
@@ -530,7 +530,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('20 Feb 2024'),
 		end_date: new Date('20 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${foodoshit}`,
+		icon: `${foodoshit}`,
 		poster: p_foodoholics,
 		contact: [
 			{
@@ -559,7 +559,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('20,21 Feb 2024'),
 		end_date: new Date('20,21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${cricbash}`,
+		icon: `${cricbash}`,
 		poster: p_cricbash,
 		contact: [
 			{
@@ -588,7 +588,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('10 Mar 2023 11:00'),
 		end_date: new Date('10 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${Lounge}`,
+		icon: `${Lounge}`,
 		poster: p_cadoshit,
 		contact: [
 			{
@@ -617,7 +617,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('9 Mar 2023 15:00'),
 		end_date: new Date('9 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${jigyasa}`,
+		icon: `${jigyasa}`,
 		poster: p_jigyasa,
 		contact: [
 			{
@@ -650,7 +650,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${stargaze}`,
+		icon: `${stargaze}`,
 		poster: p_stargaze,
 		contact: [
 			{
@@ -675,7 +675,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('9 Mar 2023 13:00'),
 		end_date: new Date('9 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${stock}`,
+		icon: `${stock}`,
 		poster: p_stock,
 		contact: [
 			{
@@ -704,7 +704,7 @@ export const EVENTS: AdhyaayaEvent[] = [
 		start_date: new Date('22 Feb 2024'),
 		end_date: new Date('22 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: `url::${gdsc}`,
+		icon: `${gdsc}`,
 		poster: p_gsdc,
 		contact: [
 			{

@@ -37,11 +37,11 @@
 	style:--tw-rotate='{randomInt(-3, 3)}deg'
 	class="p-6 border border-white rounded-lg text-white bg-white/10 hover:bg-white/20 bg-blur-xl flex flex-col items-center justify-evenly gap-4 w-52 h-64 transition-all duration-300 hover:transform"
 >
-	{#if data.icon.includes('url::')}
+	{#if data.icon.includes('')}
 		<img
 			height="150"
 			width="150"
-			src={data.icon.replace('url::', '')}
+			src={data.icon.replace('', '')}
 			alt=""
 			class="min-h-[150px] object-contain"
 		/>

@@ -1,7 +1,6 @@
-<script>
+<!-- <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+
 	import adhLogo from '$lib/images/adhyaaya-logo.png'
 	import dropdown from '$lib/images/dropdown.png'
 
@@ -29,4 +28,4 @@
 
 <style>
 	
-</style>
+</style> -->
