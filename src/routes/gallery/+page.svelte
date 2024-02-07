@@ -1,10 +1,27 @@
 <script>
 	import { Splide, SplideSlide } from '@splidejs/svelte-splide';
 	import '@splidejs/svelte-splide/css';
+    import hbackground from '$lib/images/horizontal-bg.jpg'
+    import vbackground from '$lib/images/vertical-bg.jpg'
+    let logo = hbackground;
+    import {onMount} from 'svelte'
     let dropdown=false;
+    let mobile=false;
+
     function toggle(){
         dropdown=!dropdown
     }
+    const handleResize = () => {
+    logo=(window.innerWidth>1024)?hbackground:vbackground
+    mobile=(window.innerWidth>1024)?false:true
+  };
+    onMount(() => {
+    window.addEventListener('resize', handleResize);
+ 
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
     import adhyaayaLogo from '$lib/images/adhyaaya-logo.png' 
     import dropdownIcon from '$lib/images/dropdown.png'
 let options = {
@@ -24,27 +41,27 @@ let options = {
     <a href="/">
         <img class="adhyaayaLogo" src={adhyaayaLogo} alt="Adhyaaya Logo">
     </a>
-    <a on:click={toggle} on:keydown={toggle} class="select" href="/">
+    <a on:click={toggle} on:keydown={toggle} class="select" href='#'>
         <img class="dropdownIcon"  src={(dropdown)?dropdownIcon:dropdownIcon} alt="Adhyaaya Logo">
         {#if dropdown}
-        <div class="dropdown">
-            <a class="dropdown_item" href="/">home</a>
-            <a class="dropdown_item" href="/events">events</a>
-            <a class="dropdown_item" href="/about">about us</a>
-            <a class="dropdown_item" href="/contacts">contact</a>
-            <a class="dropdown_item" href="/gallery">gallery</a>
-            <a class="dropdown_item" href="/sponsors">sponsors</a>
-            <a class="dropdown_item" href="/teams">teams</a>
+        <div class="dropdown flex flex-col" style=" display:flex;position: absolute;top: 4rem;right: 2rem;flex-direction: column;width:6rem;border-radius: 1rem;height:auto;">
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/">home</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/events">events</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/about">about us</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/contacts">contact</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/gallery">gallery</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/sponsors">sponsors</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/teams">teams</a>
         </div>
         {/if}
     </a>
 </div>
-<div class="fixed h-full w-full bg-black"></div>
+<div class="fixed h-full w-full"></div>
 <div
-	class="events-container w-1/2 mx-auto bg-black grid grid-cols-1 justify-items-stretch scroll-smooth pb-16"
+	class="events-container w-1/2 mx-auto grid grid-cols-1 justify-items-stretch scroll-smooth pb-16"
 >
 	<div class="flex flex-col items-center justify-center pb-28">
-		<h1 class="text-4xl font-bold text-center text-white myfont">Gallery</h1>
+		<h1 class="text-4xl font-bold text-center text-black myfont">Gallery</h1>
 	</div>
 
 	<div class="flex flex-col items-center justify-center pb-12 pt-12">
@@ -183,4 +200,28 @@ let options = {
 		background-size: cover;
 		background-position: center;
 	}
+
+	.header{
+        width:100%;
+        height:6rem;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+		z-index:999;
+    }
+    .adhyaayaLogo{
+        width:10rem;
+        margin:auto;
+        padding:0.4rem;
+    
+        padding-left: 1rem;;
+    }
+    .dropdownIcon{
+        width:3rem;
+        margin:auto;
+        position:absolute;
+        top:1rem;
+        right:1rem;
+        user-select:text
+    }
 </style>

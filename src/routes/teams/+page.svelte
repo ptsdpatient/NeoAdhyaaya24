@@ -2,7 +2,11 @@
     
     import adhyaayaLogo from '$lib/images/adhyaaya-logo.png' 
     import dropdownIcon from '$lib/images/dropdown.png'
-	import background from '$lib/images/bg-2.jpg'
+	// import background from '$lib/images/bg-2.jpg'
+	import hbackground from '$lib/images/horizontal-bg.jpg'
+    import vbackground from '$lib/images/vertical-bg.jpg'
+    let logo = hbackground;
+    import {onMount} from 'svelte'
 
 	import swarali_prayagi_photo from '$lib/assets/team/advisors/swarali-prayagi-compressed.webp?url';
 	import shlok_tajne_photo from '$lib/assets/team/advisors/shlok-tajne-compressed.webp?url';
@@ -57,6 +61,20 @@
     function toggle(){
         dropdown=!dropdown
     }
+	let mobile=false;
+	const handleResize = () => {
+    logo=(window.innerWidth>1024)?hbackground:vbackground
+    mobile=(window.innerWidth>1024)?false:true
+   
+  };
+    onMount(() => {
+    window.addEventListener('resize', handleResize);
+ 
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
 	</script>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -66,7 +84,7 @@
 	<title>Meet Our Team | Adhyaaya'24</title>
 </svelte:head>
 
-<img class="fixed w-full t-0" style="z-index:-1" src={background} alt="background" width=100% height=100% >
+<img class="h-full w-full" style="z-index:-1;top:0;position:sticky" src={logo} alt="background" width=100% height=100% >
 
 <div class="header h-[10vh] fixed">
     <a href="/">
@@ -1912,5 +1930,11 @@
     text-align: center;
     width:4rem;
     background-color: antiquewhite;
+}
+html,body{
+	height:100%;
+	width:100%;
+	margin:0%;
+	padding:0%;
 }
 </style>
