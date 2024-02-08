@@ -6,6 +6,7 @@
 	import hbackground from '$lib/images/horizontal-bg.jpg'
     import vbackground from '$lib/images/vertical-bg.jpg'
     let logo = hbackground;
+	let mobile=false;
     import {onMount} from 'svelte'
 
 	import swarali_prayagi_photo from '$lib/assets/team/advisors/swarali-prayagi-compressed.webp?url';
@@ -61,14 +62,15 @@
     function toggle(){
         dropdown=!dropdown
     }
-	let mobile=false;
+	
 	const handleResize = () => {
     logo=(window.innerWidth>1024)?hbackground:vbackground
     mobile=(window.innerWidth>1024)?false:true
    
   };
     onMount(() => {
-    window.addEventListener('resize', handleResize);
+		mobile=(window.innerWidth<1024)?true:false;
+        window.addEventListener('resize', handleResize);
  
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -84,23 +86,21 @@
 	<title>Meet Our Team | Adhyaaya'24</title>
 </svelte:head>
 
-<img class="h-full w-full" style="z-index:-1;top:0;position:sticky" src={logo} alt="background" width=100% height=100% >
+<img class="h-full w-full fixed filter brightness-50" style="z-index:-1;top:0;" src={(mobile)?vbackground:hbackground} alt="background" width=100% height=100% >
 
-<div class="header h-[10vh] fixed">
+<div class="header h-[10vh] fixed" style="z-index:9999">
     <a href="/">
         <img class="adhyaayaLogo" src={adhyaayaLogo} alt="Adhyaaya Logo">
     </a>
     <a on:click={toggle} on:keydown={toggle} class="select " href="#">
         <img class="dropdownIcon text-black p-1" src={dropdownIcon} alt="Adhyaaya Logo">
         {#if dropdown}
-        <div class="dropdown">
-            <a class="dropdown_item" href="/">home</a>
-            <a class="dropdown_item" href="/events">events</a>
-            <a class="dropdown_item" href="/about">about us</a>
-            <a class="dropdown_item" href="/contacts">contact</a>
-            <a class="dropdown_item" href="/gallery">gallery</a>
-            <a class="dropdown_item" href="/sponsors">sponsors</a>
-            <a class="dropdown_item" href="/teams">teams</a>
+		<div class="dropdown flex flex-col w-40 bg-opacity-40 bg-gray-900 backdrop-blur-sm rounded border border-white" style=" display:flex;position: absolute;top: 4rem;right: 2rem;flex-direction: column;border-radius: 1rem;height:auto;">
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/">home</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600  p-2 w-40 transition-all-ease" href="/events">events</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600  p-2 w-40 transition-all-ease" href="/gallery">gallery</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/sponsors">sponsors</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/teams">teams</a>
         </div>
         {/if}
     </a>
@@ -1905,7 +1905,9 @@
         padding:0.4rem;
         padding-left: 1rem;;
     }
-    
+	.dropdown_item{
+    border-radius: 0.7rem;
+   }
     .dropdownIcon{
         width:3rem;
         margin:auto;
@@ -1914,27 +1916,5 @@
         right:1rem;
         user-select:text
     }
-	.dropdown{
-    display:flex;
-    position: absolute;
-    top: 4rem;
-    right: 0;
-    flex-direction: column;
-    width:6rem;
-    gap:0.3rem;
-    height:auto;
-   }
-   .dropdown_item{
-    padding:0.5rem;
-    height:1.2rem;
-    text-align: center;
-    width:4rem;
-    background-color: antiquewhite;
-}
-html,body{
-	height:100%;
-	width:100%;
-	margin:0%;
-	padding:0%;
-}
+	
 </style>

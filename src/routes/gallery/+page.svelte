@@ -16,6 +16,8 @@
     mobile=(window.innerWidth>1024)?false:true
   };
     onMount(() => {
+		logo=(window.innerWidth>1024)?hbackground:vbackground
+    mobile=(window.innerWidth>1024)?false:true
     window.addEventListener('resize', handleResize);
  
     return () => {
@@ -44,11 +46,9 @@ let options = {
     <a on:click={toggle} on:keydown={toggle} class="select" href='#'>
         <img class="dropdownIcon"  src={(dropdown)?dropdownIcon:dropdownIcon} alt="Adhyaaya Logo">
         {#if dropdown}
-        <div class="dropdown flex flex-col" style=" display:flex;position: absolute;top: 4rem;right: 2rem;flex-direction: column;width:6rem;border-radius: 1rem;height:auto;">
+        <div class="dropdown flex flex-col w-40 bg-opacity-40 bg-gray-900 backdrop-blur-sm rounded border border-white" style=" display:flex;position: absolute;top: 4rem;right: 2rem;flex-direction: column;border-radius: 1rem;height:auto;">
             <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/">home</a>
             <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/events">events</a>
-            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/about">about us</a>
-            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/contacts">contact</a>
             <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/gallery">gallery</a>
             <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/sponsors">sponsors</a>
             <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/teams">teams</a>
@@ -56,19 +56,25 @@ let options = {
         {/if}
     </a>
 </div>
-<div class="fixed h-full w-full"></div>
+<img class="fixed h-full w-full" alt="bg" src={logo}>
 <div
 	class="events-container w-1/2 mx-auto grid grid-cols-1 justify-items-stretch scroll-smooth pb-16"
 >
-	<div class="flex flex-col items-center justify-center pb-28">
-		<h1 class="text-4xl font-bold text-center text-black myfont">Gallery</h1>
-	</div>
-
-	<div class="flex flex-col items-center justify-center pb-12 pt-12">
-		<h1 class="text-2xl font-bold text-center text-white">2022</h1>
-	</div>
+	<p class="text-white font-bold text-3xl md:text-6xl p-10 pb-0 m-auto" style="z-index:99">Gallery</p>
+	
+	<p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2023</p>
+	<Splide {options} aria-label="2023" id="2023">
+		{#each Array.from({length: 6}) as _, i}
+			<SplideSlide>
+			<img src="/gallery/2023/{i}.JPG" alt="" class="mx-auto" />
+		  </SplideSlide>
+		{/each}
+	  </Splide>
+	
+	
+	<p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2022</p>
 	<Splide {options} aria-label="2022" id="2022">
-		{#each Array.from({length: 5}) as _, i}
+		{#each Array.from({length: 6}) as _, i}
 			<SplideSlide>
 			<img src="/gallery/2022/{i}-min.jpg" alt="" class="mx-auto" />
 		  </SplideSlide>
@@ -76,9 +82,8 @@ let options = {
 	  </Splide>
 
 
-	<div class="flex flex-col items-center justify-center pb-12 pt-12">
-		<h1 class="text-2xl font-bold text-center text-white nunu">2021</h1>
-	</div>
+	  <p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2021</p>
+
 	<Splide {options} aria-label="2021" id="2021">
 		{#each Array.from({length: 11}) as _, i}
 			<SplideSlide>
@@ -86,9 +91,8 @@ let options = {
 		  </SplideSlide>
 		{/each}
 	  </Splide>
-	<div class="flex flex-col items-center justify-center pb-12 pt-12">
-		<h1 class="text-2xl font-bold text-center text-white nunu">2020</h1>
-	</div>
+	  <p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2020</p>
+
 	<!-- <div class="zoomwall" id="2020">
 		<img src="/gallery/2020/0.jpg" alt="" />
 		<img src="/gallery/2020/1.jpg" alt="" />
@@ -110,9 +114,8 @@ let options = {
 		  </SplideSlide>
 		{/each}
 	  </Splide>
-	<div class="flex flex-col items-center justify-center pb-12 pt-12">
-		<h1 class="text-2xl font-bold text-center text-white nunu">2019</h1>
-	</div>
+	  <p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2019</p>
+
 	<!-- <div class="zoomwall" id="2019">
 		<img src="/gallery/2019/0.jpg" alt="" />
 		<img src="/gallery/2019/1.jpg" alt="" />
@@ -134,23 +137,9 @@ let options = {
 		  </SplideSlide>
 		{/each}
 	  </Splide>
-	<div class="flex flex-col items-center justify-center pb-12 pt-12">
-		<h1 class="text-2xl font-bold text-center text-white nunu">2018</h1>
-	</div>
-	<!-- <div class="zoomwall" id="2018">
-		<img src="/gallery/2018/0.jpg" alt="" />
-		<img src="/gallery/2018/1.jpg" alt="" />
-		<img src="/gallery/2018/2.jpg" alt="" />
-		<img src="/gallery/2018/3.jpg" alt="" />
-		<img src="/gallery/2018/4.jpg" alt="" />
-		<img src="/gallery/2018/5.jpg" alt="" />
-		<img src="/gallery/2018/6.jpg" alt="" />
-		<img src="/gallery/2018/7.jpg" alt="" />
-		<img src="/gallery/2018/8.jpg" alt="" />
-		<img src="/gallery/2018/9.jpg" alt="" />
-		<img src="/gallery/2018/10.jpg" alt="" />
-		<img src="/gallery/2018/11.jpg" alt="" />
-	</div> -->
+	  <p class="text-white  text-5xl p-10  m-auto" style="z-index:99">2018</p>
+
+
 	<Splide {options} aria-label="2018" id="2018">
 		{#each Array.from({length: 11}) as _, i}
 			<SplideSlide>
@@ -224,4 +213,7 @@ let options = {
         right:1rem;
         user-select:text
     }
+	.dropdown_item{
+    border-radius: 0.7rem;
+   }
 </style>

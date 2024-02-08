@@ -56,6 +56,7 @@ import roborace from '$lib/assets/icons/roborace.png?url';
 import inexpress from '$lib/assets/icons/inexpress.jpg?url';
 import sspy from '$lib/assets/icons/sspy.png?url';
 import qmaster from '$lib/assets/icons/qmaster.png?url';
+import bornpsychos from '$lib/assets/icons/born_psychos.png?url'
 
 // import multirotor from '$lib/assets/icons/multirotor.png?url';
 
@@ -232,7 +233,7 @@ export const NonTechEvent: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: 'ri:treasure-map-line',
+		icon: `${bornpsychos}`,
 		poster: p_bornpsycos,
 		contact: [
 			{

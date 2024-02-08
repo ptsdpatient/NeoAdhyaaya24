@@ -52,10 +52,12 @@ import BGMI from '$lib/assets/icons/BGMI.jpg?url';
 import Lounge from '$lib/assets/icons/lounge.jpg?url';
 import aeromodel from '$lib/assets/icons/aeromodel.png?url'
 import stock from '$lib/assets/icons/stock.png?url';
+import codeventure from '$lib/assets/icons/Codeventure.png?url'
 import roborace from '$lib/assets/icons/roborace.png?url';
 import inexpress from '$lib/assets/icons/inexpress.jpg?url';
 import sspy from '$lib/assets/icons/sspy.png?url';
 import qmaster from '$lib/assets/icons/qmaster.png?url';
+import avishkar from '$lib/assets/icons/avishkar.png?url'
 
 // import multirotor from '$lib/assets/icons/multirotor.png?url';
 
@@ -92,7 +94,7 @@ export const TechEvent: AdhyaayaEvent[] = [
 		start_date: new Date('9 Mar 2023 13:00'),
 		end_date: new Date('9 Mar 2023'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: 'flat-color-icons:idea',
+		icon: `${avishkar}`,
 		poster: p_avishkar,
 		contact: [
 			{
@@ -151,7 +153,7 @@ export const TechEvent: AdhyaayaEvent[] = [
 		start_date: new Date('21 Feb 2024'),
 		end_date: new Date('21 Feb 2024'),
 		small_image: 'https://placeimg.com/360/360/tech',
-		icon: 'carbon:code',
+		icon: `${codeventure}`,
 		poster: p_codeventure,
 		contact: [
 			{

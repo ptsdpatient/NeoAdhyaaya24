@@ -9,23 +9,22 @@
 
 <svelte:head>
 	<title>About</title>
-	<meta name="description" content="About this app" />
 </svelte:head>
-<div class="header">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<div class="header h-[10vh] fixed" style="z-index:9999">
     <a href="/">
         <img class="adhyaayaLogo" src={adhyaayaLogo} alt="Adhyaaya Logo">
     </a>
-    <a on:click={toggle} on:keydown={toggle} class="select" href="/">
-        <img class="dropdownIcon"  src={(dropdown)?dropdownIcon:dropdownIcon} alt="Adhyaaya Logo">
+    <a on:click={toggle} on:keydown={toggle} class="select " href="#">
+        <img class="dropdownIcon text-black p-1" src={dropdownIcon} alt="Adhyaaya Logo">
         {#if dropdown}
-        <div class="dropdown">
-            <a class="dropdown_item" href="/">home</a>
-            <a class="dropdown_item" href="/events">events</a>
-            <a class="dropdown_item" href="/about">about us</a>
-            <a class="dropdown_item" href="/contacts">contact</a>
-            <a class="dropdown_item" href="/gallery">gallery</a>
-            <a class="dropdown_item" href="/sponsors">sponsors</a>
-            <a class="dropdown_item" href="/teams">teams</a>
+		<div class="dropdown flex flex-col w-40 bg-opacity-40 bg-gray-900 backdrop-blur-sm rounded border border-white" style=" display:flex;position: absolute;top: 4rem;right: 2rem;flex-direction: column;border-radius: 1rem;height:auto;">
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/">home</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600  p-2 w-40 transition-all-ease" href="/events">events</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600  p-2 w-40 transition-all-ease" href="/gallery">gallery</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/sponsors">sponsors</a>
+            <a class="dropdown_item text-xl text-white hover:bg-red-600 p-2 w-40 transition-all-ease" href="/teams">teams</a>
         </div>
         {/if}
     </a>
@@ -51,3 +50,32 @@
 		using it with JavaScript disabled!
 	</p>
 </div>
+<style>
+.header{
+    width:100%;
+    height:6rem;
+    display:flex;
+    position:fixed;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.adhyaayaLogo{
+    width:10rem;
+    margin:auto;
+    padding:0.4rem;
+
+    padding-left: 1rem;;
+}
+
+.dropdownIcon{
+    width:3rem;
+    margin:auto;
+    position:absolute;
+    top:1rem;
+    right:1rem;
+    user-select:text
+}
+.dropdown_item{
+    border-radius: 0.7rem;
+   }
+</style>
