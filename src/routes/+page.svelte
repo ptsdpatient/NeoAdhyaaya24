@@ -61,10 +61,10 @@
 
     <div class="w-full h-full relative" style="">
     {#if mobile}
-    <div id="gear1" class="absolute" style="width:6rem;top:18%;left:32%;transition:all 1s ease;background-image: url({team}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><img src={gear} class="clockwise" alt="gearicon"></div>
-    <div id="gear2" class="absolute" style="width:8rem;top:72%;left:50%;transition:all 1s ease;background-image: url({gallery}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><img src={gear} class="anticlockwise" alt="gearicon"></div>
-    <div id="gear3" class="absolute" style="width:10rem;top:51%;left:33%;transition:all 1s ease;background-image: url({sponsor}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><img src={gear} class="clockwise" alt="gearicon"></div>
-    <div id="gear4" class="absolute" style="width:12rem;top:29%;left:3%;transition:all 1s ease;background-image: url({register}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><img src={gear} class="anticlockwise" alt="gearicon"></div>
+    <div id="gear1" class="absolute" style="width:6rem;top:18%;left:32%;transition:all 1s ease;background-image: url({team}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/teams'><img src={gear} class="clockwise" alt="gearicon"></a></div>
+    <div id="gear2" class="absolute" style="width:8rem;top:72%;left:50%;transition:all 1s ease;background-image: url({gallery}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/gallery'><img src={gear} class="anticlockwise" alt="gearicon"></a></div>
+    <div id="gear3" class="absolute" style="width:10rem;top:51%;left:33%;transition:all 1s ease;background-image: url({sponsor}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/sponsors'><img src={gear} class="clockwise" alt="gearicon"></a></div>
+    <div id="gear4" class="absolute" style="width:12rem;top:29%;left:3%;transition:all 1s ease;background-image: url({register}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/events'><img src={gear} class="anticlockwise" alt="gearicon"></a></div>
     {:else}
     <div id="gear1" class="absolute" style="width:14rem;top:17.5%;left:49%;transition:all 1s ease;background-image: url({team}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/teams'><img src={gear} class="clockwise" alt="gearicon"></a></div>
     <div id="gear2" class="absolute" style="width:15rem;top:42%;left:58.5%;transition:all 1s ease;background-image: url({gallery}); background-size: 60% 70%;background-repeat: no-repeat; background-position: center;"><a href='/gallery'><img src={gear} class="anticlockwise" alt="gearicon"></a></div>
